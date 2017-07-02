@@ -170,7 +170,6 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 	}
 	renderContent(politiciansSet:PoliticiansSet, state: string|null) {
 		var filterState = function(set:Politician[], state:string|null): Politician[] {
-			console.log(state);
 			if (state === null || !state) {
 				return set;
 			}
