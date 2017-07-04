@@ -44312,7 +44312,8 @@ function parsePolitician(data, idx) {
         first: data.gsx$first.$t,
         name: data.gsx$name.$t,
         organization: data.gsx$organization.$t,
-        image: imageBaseURL + data.gsx$imagepleasedontedit.$t,
+        image: imageBaseURL + data.gsx$bioguide.$t + '_x1.jpg',
+        image2x: imageBaseURL + data.gsx$bioguide.$t + '_x2.jpg',
         weight: data.gsx$weight.$t,
         team: data.gsx$team.$t || 'undecided',
         size: data.gsx$size.$t,
@@ -44383,7 +44384,7 @@ var PoliticalScoreboard = (function (_super) {
     };
     PoliticalScoreboard.prototype.renderPolitician = function (politician) {
         return (React.createElement("div", { key: "p-" + politician.idx, className: "politician" },
-            React.createElement("img", { src: politician.image }),
+            React.createElement("img", { src: politician.image, srcSet: politician.image2x + " 2x" }),
             React.createElement("div", { className: "cover" },
                 React.createElement("span", null, politician.organization)),
             React.createElement("div", { className: "actions" },
@@ -44420,19 +44421,19 @@ var PoliticalScoreboard = (function (_super) {
                     React.createElement("div", { className: "unit" },
                         React.createElement("h4", null, "Unknown:"),
                         React.createElement("p", null, "They haven't come out against Pai's plan yet. We need you to tweet them.")),
-                    React.createElement(carousel_1.Carousel, { items: undecided, width: 100, height: 120, padding: 10, pagePadding: 30, eventEmitter: this.props.eventEmitter, renderItem: renderItem })) : null,
+                    React.createElement(carousel_1.Carousel, { items: undecided, width: 100, height: 122, padding: 10, pagePadding: 30, eventEmitter: this.props.eventEmitter, renderItem: renderItem })) : null,
             cable.length ?
                 React.createElement("div", { className: "psb-section psb-cable" },
                     React.createElement("div", { className: "unit" },
                         React.createElement("h4", null, "Team Cable:"),
                         React.createElement("p", null, "They are for Pai's plan. We need you to tweet them.")),
-                    React.createElement(carousel_1.Carousel, { items: cable, width: 100, height: 120, padding: 10, pagePadding: 30, eventEmitter: this.props.eventEmitter, renderItem: renderItem })) : null,
+                    React.createElement(carousel_1.Carousel, { items: cable, width: 100, height: 122, padding: 10, pagePadding: 30, eventEmitter: this.props.eventEmitter, renderItem: renderItem })) : null,
             internet.length ?
                 React.createElement("div", { className: "psb-section psb-internet" },
                     React.createElement("div", { className: "unit" },
                         React.createElement("h4", null, "Team Internet:"),
                         React.createElement("p", null, "They have come out against Pai's plan. Show them your support.")),
-                    React.createElement(carousel_1.Carousel, { items: internet, width: 100, height: 120, padding: 10, pagePadding: 30, eventEmitter: this.props.eventEmitter, renderItem: renderItem })) : null));
+                    React.createElement(carousel_1.Carousel, { items: internet, width: 100, height: 122, padding: 10, pagePadding: 30, eventEmitter: this.props.eventEmitter, renderItem: renderItem })) : null));
     };
     PoliticalScoreboard.prototype.render = function () {
         var content = null;

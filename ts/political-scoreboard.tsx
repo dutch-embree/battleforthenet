@@ -43,7 +43,8 @@ function parsePolitician(data:any, idx:number) {
 		first: data.gsx$first.$t,
 		name: data.gsx$name.$t,
 		organization: data.gsx$organization.$t,
-		image: imageBaseURL + data.gsx$imagepleasedontedit.$t,
+		image: imageBaseURL + data.gsx$bioguide.$t + '_x1.jpg',
+		image2x: imageBaseURL + data.gsx$bioguide.$t + '_x2.jpg',
 		weight: data.gsx$weight.$t,
 		team: data.gsx$team.$t || 'undecided',
 		size: data.gsx$size.$t,
@@ -68,6 +69,7 @@ interface Politician {
 	name: string
 	organization: string
 	image: string
+	image2x: string
 	weight: string
 	team: string
 	size: string
@@ -151,7 +153,7 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 	renderPolitician(politician:Politician) {
 		return (
 			<div key={"p-" + politician.idx} className="politician">
-				<img src={ politician.image } />
+				<img src={ politician.image } srcSet={ politician.image2x + " 2x" } />
 				<div className="cover">
 					<span>{politician.organization}</span>
 				</div>
@@ -197,7 +199,7 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 							<h4>Unknown:</h4>
 							<p>They haven't come out against Pai's plan yet. We need you to tweet them.</p>
 						</div>
-						<Carousel items={undecided} width={100} height={120} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
+						<Carousel items={undecided} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
 					</div> : null }
 
 				{ cable.length ?
@@ -206,7 +208,7 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 							<h4>Team Cable:</h4>
 							<p>They are for Pai's plan. We need you to tweet them.</p>
 						</div>
-						<Carousel items={cable} width={100} height={120} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
+						<Carousel items={cable} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
 					</div> : null }
 
 				{ internet.length ?
@@ -215,7 +217,7 @@ export class PoliticalScoreboard extends React.Component<Props, State> {
 							<h4>Team Internet:</h4>
 							<p>They have come out against Pai's plan. Show them your support.</p>
 						</div>
-						<Carousel items={internet} width={100} height={120} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
+						<Carousel items={internet} width={100} height={122} padding={10} pagePadding={30} eventEmitter={this.props.eventEmitter} renderItem={renderItem} />
 					</div> : null }
 			</div>
 		);

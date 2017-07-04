@@ -1172,11 +1172,11 @@ template {
     background-color: rgba(75, 205, 207, 0.7); }
   .bftn-homepage .political-scoreboard .politician {
     width: 100px;
-    height: 120px;
+    height: 122px;
     position: relative; }
     .bftn-homepage .political-scoreboard .politician img {
       width: 100px;
-      height: 120px; }
+      height: 122px; }
     .bftn-homepage .political-scoreboard .politician div.cover {
       position: absolute;
       top: 0px;
@@ -1217,7 +1217,7 @@ template {
   .bftn-homepage .political-scoreboard .carousel-item-active:hover div.actions {
     display: block; }
   .bftn-homepage .political-scoreboard .carousel {
-    height: 120px; }
+    height: 122px; }
     .bftn-homepage .political-scoreboard .carousel .bar {
       display: none; }
     .bftn-homepage .political-scoreboard .carousel .controls .prev div, .bftn-homepage .political-scoreboard .carousel .controls .next div {
